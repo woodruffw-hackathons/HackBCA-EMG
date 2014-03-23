@@ -6,7 +6,7 @@ A collection of programs (written in Arduino Wiring and Processing) used to inte
 
 The actual data writer (WriteSensorData.ino) is based upon the example code provided by Olimex.
 
-The two Processing programs (GraphSensorData.pde and PlaySensorData.pde) take that data (obtained from a serial terminal) and output it to the user in various ways.
+The three Processing programs (GraphSensorData.pde, PlaySensorData.pde, and MuscleGame.pde) take that data (obtained from a serial terminal) and output it to the user in various ways.
 
 PlaySensorData.pde depends upon Processing's Minim library for audio output.
 
