@@ -8,7 +8,7 @@ import processing.serial.*;
 */
 
 Serial port;
-Circle circle = new Circle(250, 50, 50);
+Circle circle = new Circle(250, 125, 50);
 
 int goodCount = 0;
 int badCount = 0;
@@ -21,6 +21,7 @@ void setup()
 	line(400, 0, 400, 800);
 	stroke(255, 0, 0);
 	line(100, 700, 400, 700);
+	line(100, 100, 700, 00);
 
 	String portStr = Serial.list()[2];
 	port = new Serial(this, portStr, 14400);
@@ -34,6 +35,7 @@ void draw()
 	line(400, 0, 400, 800);
 	stroke(255, 0, 0);
 	line(100, 700, 400, 700);
+	line(100, 100, 400, 100);
 	circle.update();
 	circle.checkCollisionWithLine();
 	circle.draw();
@@ -64,15 +66,24 @@ class Circle
 
 	void update()
 	{
-		y += ySpeed;
+		//y += ySpeed;
+
+		if (y + ySpeed == 0)
+		{
+			y = -ySpeed;
+		}
+		else
+		{
+			y += ySpeed;
+		}
 	}
 
 	void checkCollisionWithLine()
 	{
 		float r = size / 2;
 
-		if (y > (height - r - 100))
-			ySpeed = 0;
+		if (y > (height - r - 100) || y < (height - 200))
+			ySpeed = -ySpeed;
 	}
 
 	void draw()
