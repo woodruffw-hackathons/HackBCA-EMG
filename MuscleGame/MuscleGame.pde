@@ -42,7 +42,6 @@ void draw()
 void serialEvent(Serial port)
 {
 	int value = port.read();
-	println(value);
 
 	if (value < 120)
 	{

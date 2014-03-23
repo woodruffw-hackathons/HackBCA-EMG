@@ -14,7 +14,18 @@
 #define PACKETLEN (NUMCHANNELS * 2 + HEADERLEN + 1)
 #define SAMPFREQ 256                      
 #define TIMER2VAL (1024/(SAMPFREQ))                          
-#define CAL_SIG 	uint8_t sync	uint8_t sync	uint8_t versio	uint8_t coun	uint16_t data[6	uint8_t switche}
+#define CAL_SIG 9
+
+// NOT USED
+// struct packet
+// {
+// 	uint8_t sync0;
+//  	uint8_t sync1;
+//  	uint8_t version;
+//  	uint8_t count;
+//  	uint16_t data[6];
+//  	uint8_t switches;
+// }
 
 volatile unsigned char packet[PACKETLEN];
 volatile unsigned char index;
@@ -40,22 +51,22 @@ void setup(void)
 
 	pinMode(CAL_SIG, OUTPUT);
 
-	packet[0] = 0xa5; 
-	packet[1] = 0x5a; 
-	packet[2] = 2;    
-	packet[3] = 0;    
-	packet[4] = 0x02; 
-	packet[5] = 0x00; 
-	packet[6] = 0x02; 
-	packet[7] = 0x00; 
-	packet[8] = 0x02; 
-	packet[9] = 0x00; 
-	packet[10] = 0x02;
-	packet[11] = 0x00;
-	packet[12] = 0x02;
-	packet[13] = 0x00;
-	packet[14] = 0x02;
-	packet[15] = 0x00;
+	packet[0] = 0xa5;    
+	packet[1] = 0x5a;   
+	packet[2] = 2;       
+	packet[3] = 0;      
+	packet[4] = 0x02;    
+	packet[5] = 0x00;   
+	packet[6] = 0x02;    
+	packet[7] = 0x00;    
+	packet[8] = 0x02;   
+	packet[9] = 0x00;   
+	packet[10] = 0x02;  
+	packet[11] = 0x00;   
+	packet[12] = 0x02;   
+	packet[13] = 0x00;   
+	packet[14] = 0x02;   
+	packet[15] = 0x00;   
 	packet[2 * NUMCHANNELS + HEADERLEN] =  0x01;
 
 	FlexiTimer2::set(TIMER2VAL, Timer2_Overflow_ISR);
