@@ -17,7 +17,7 @@ void draw()
 {
 }
 
-void serialEvent (Serial port)
+void serialEvent(Serial port)
 {
  int input = port.read();
  float y = height - input;
