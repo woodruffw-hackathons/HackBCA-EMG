@@ -1,10 +1,11 @@
 import processing.serial.*;
+
 Serial port;
 float x = 0;
 
 void setup()
 {
- size(400, 300); 
+ size(800, 600); 
  println(Serial.list());
  
  String portStr = Serial.list()[2];
