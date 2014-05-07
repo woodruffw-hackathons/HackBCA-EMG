@@ -13,3 +13,6 @@ PlaySensorData.pde depends upon Processing's [Minim library](http://code.compart
 ## License
 All code is licensed under the MIT License.
 View the LICENSE file for the exact text.
+
+## Miscellanea
+Here are some [pictures from HackBCA](http://woodruffw.us/realsite/picturebook/picturebook.html#HackBCA).
